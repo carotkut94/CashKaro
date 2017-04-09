@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/carouselContainer">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.death.cashkaro.MainActivity">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/carouselContainer"
+            android:layout_width="match_parent"
+            android:layout_height="200sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/header1"
+            android:background="@color/colorPrimaryDark"
+            android:layout_below="@+id/carouselContainer"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:textStyle="bold"
+                android:text="UPTO 85% OFF + OTHER DEALS"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_below="@id/header1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/storeContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/header2"
+                android:background="@color/colorPrimaryDark"
+                android:layout_below="@+id/storeContainer"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textColor="@android:color/white"
+                    android:layout_margin="8dp"
+                    android:textStyle="bold"
+                    android:text="OTHER DEALS FOR ALL NEEDS"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/dealsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:layout_below="@+id/header2" />
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>
