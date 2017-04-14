@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_deals"
+            android:icon="@drawable/ic_account_balance_wallet_black_24dp"
+            android:title="Deals" />
+        <item
+            android:id="@+id/nav_elec"
+            android:icon="@drawable/ic_power_black_24dp"
+            android:title="Electronics" />
+
+        <item
+            android:id="@+id/nav_top"
+            android:icon="@drawable/ic_vertical_align_top_black_24dp"
+            android:title="Top" />
+
+        <item
+            android:id="@+id/nav_cashback"
+            android:icon="@drawable/ic_note_black_24dp"
+            android:title="Cashback" />
+    </group>
+
+    <item android:title="Other">
+        <menu>
+            <item
+                android:id="@+id/nav_about_us"
+                android:title="Settings" />
+            <item
+                android:id="@+id/nav_privacy_policy"
+                android:title="CashKaro" />
+        </menu>
+    </item>
+
+</menu>

@@ -20,18 +20,14 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.List;
 
-/**
- * Created by deathcode on 09/04/17.
- */
-
-public class AdsRecyclerViewAdapter extends RecyclerView.Adapter<AdsRecyclerViewAdapter.MyViewHolder>  {
+public class ElecRecyclerViewAdapter extends RecyclerView.Adapter<ElecRecyclerViewAdapter.MyViewHolder>  {
 
 
 
-    private List<StoreModel> models;
+    private List<ElecModel> models;
     private Context mContext;
 
-    public AdsRecyclerViewAdapter(Context context, List<StoreModel> models) {
+    public ElecRecyclerViewAdapter(Context context, List<ElecModel> models) {
         mContext = context;
         this.models = models;
     }
@@ -40,38 +36,24 @@ public class AdsRecyclerViewAdapter extends RecyclerView.Adapter<AdsRecyclerView
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.store_layout, parent, false);
+                .inflate(R.layout.elecmodel_layout, parent, false);
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        final StoreModel model = models.get(position);
-        holder.offerText.setText(model.getOfferText());
-        holder.viewAllText.setText(model.getBottomText());
-        holder.viewAllText.setPaintFlags(holder.viewAllText.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        Glide.with(mContext).load(model.getImageLink())
-                .thumbnail(0.5f)
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .into(holder.logoImage);
-        holder.seeOffer.setOnClickListener(new View.OnClickListener() {
+
+        final ElecModel model = models.get(position);
+        holder.adText.setText(model.getAdText());
+        holder.shopNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showNotification();
-                Toast.makeText(mContext, "Clicked", Toast.LENGTH_LONG).show();
-                mContext.startActivity(new Intent(mContext, ShowWebView.class).putExtra("URL", model.getExternalLink()));
+                mContext.startActivity(new Intent(mContext, ShowWebView.class).putExtra("URL", model.getBackendLink()));
             }
         });
-
-        holder.viewAllText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mContext.startActivity(new Intent(mContext, ShowWebView.class).putExtra("URL", model.getStoreLink()));
-            }
-        });
-
+        Glide.with(mContext).load(model.getImageLink()).diskCacheStrategy(DiskCacheStrategy.NONE).dontTransform().crossFade().into(holder.adImage);
     }
 
     private void showNotification() {
@@ -96,17 +78,14 @@ public class AdsRecyclerViewAdapter extends RecyclerView.Adapter<AdsRecyclerView
 
     class MyViewHolder extends RecyclerView.ViewHolder
     {
-        ImageView logoImage;
-        TextView offerText;
-        TextView viewAllText;
-        Button seeOffer;
+        ImageView adImage;
+        TextView adText;
+        Button shopNow;
         MyViewHolder(View itemView) {
             super(itemView);
-            logoImage = (ImageView) itemView.findViewById(R.id.storeImage);
-            offerText = (TextView) itemView.findViewById(R.id.offerText);
-            seeOffer = (Button) itemView.findViewById(R.id.viewOffer);
-            viewAllText = (TextView) itemView.findViewById(R.id.viewAll);
-
+            adImage = (ImageView) itemView.findViewById(R.id.card_image);
+            adText = (TextView) itemView.findViewById(R.id.ad);
+            shopNow = (Button) itemView.findViewById(R.id.showOffer);
 
         }
     }

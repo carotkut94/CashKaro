@@ -5,6 +5,26 @@ package com.death.cashkaro;
  */
 
 public class StoreModel {
+
+    String externalLink;
+    String storeLink;
+
+    public String getExternalLink() {
+        return externalLink;
+    }
+
+    public void setExternalLink(String externalLink) {
+        this.externalLink = externalLink;
+    }
+
+    public String getStoreLink() {
+        return storeLink;
+    }
+
+    public void setStoreLink(String storeLink) {
+        this.storeLink = storeLink;
+    }
+
     String imageLink;
     String offerText;
     String bottomText;
