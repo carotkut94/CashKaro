@@ -1,11 +1,11 @@
 # CashKaro
 
-#Techgig App-A-Thon project
+# Techgig App-A-Thon project
 Based on the site www.cashkaro.com 
 Uses JSOUP for html parsing
 
 
-#ShortListed for further rounds, that means they liked the app.
+# ShortListed for further rounds, that means they liked the app.
 
 
 
