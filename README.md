@@ -9,4 +9,4 @@ Uses JSOUP for html parsing
 
 
 
-*All content in the application whihc is displayed dynamically is entirly the property of cashkaro.
+*All content in the application which are displayed dynamically are entirly the property of cashkaro.
